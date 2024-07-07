@@ -18,10 +18,6 @@ exclude             : [
                         "README.md", "package.json", "package-lock.json"
                       ]
 
-external_links:
-  selector: 'a'
-  marker_html: ""
-
 defaults:
   - scope:
       path: "_pages/"
