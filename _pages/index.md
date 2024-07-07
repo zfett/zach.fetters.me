@@ -9,4 +9,13 @@ Hello! My name is Zachary Fetters and I am a amateur photographer, web designer,
 
 This is my personal website, so expect random ramblings on topics like photography, gaming, design, and programming/tech. Please note that my opinions are my own and are not reflective of those held by any past, current, or future employers or organizations I am a part of.
 
-If you're interested in spinning up your own site like mine, feel free to visit the [GitHub repository](https://github.com/zfett/zach) for my website and clone it for yourself! It's entirely hosted on GitHub and published via Netlify.
+If you're interested in spinning up your own site like mine, feel free to visit the [GitHub repository](https://github.com/zfett/zach.fetters.me) for my website and clone it for yourself! It's entirely hosted on GitHub and published via [Netlify](https://www.netlify.com).
+
+## Recent Posts
+
+{% assign posts = site.posts | limit: 10 %}
+{% for post in posts %}
+
+1. **[{{post.title}}]({{post.url}})** — Posted {{post.date | date: '%A, %b %e, %Y'}}
+
+{% endfor %}

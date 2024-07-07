@@ -10,13 +10,17 @@ collections:
     relative_directory : _posts
     label              : "posts"
 
-safe                : true
+safe                : false
 include             : [".htaccess", "_pages/"]
 exclude             : [
                         "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", 
                         "vendor/cache/", "vendor/gems/", "vendor/ruby/", "LICENSE",
                         "README.md", "package.json", "package-lock.json"
                       ]
+
+external_links:
+  selector: 'a'
+  marker_html: ""
 
 defaults:
   - scope:
