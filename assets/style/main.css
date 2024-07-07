@@ -180,6 +180,19 @@ li:last-of-type { margin: 0 }
 
 li p { margin: 0 }
 
+p img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 200px;
+    border-radius: 10px;
+    outline: 1px solid rgba(0, 0, 0, .15);
+    outline-offset: -1px;
+    user-select: none;
+    pointer-events: none;
+}
+
 code { font-family: var(--f-mono) }
 
 pre {

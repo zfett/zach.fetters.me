@@ -1,3 +1,5 @@
+local_backend: false
+
 backend:
   name: git-gateway
   branch: main
@@ -5,7 +7,7 @@ backend:
 media_folder: "assets/uploads"
 
 collections:
-  - name: "blog"
+  - name: "post"
     label: "Blog"
     folder: "_posts"
     create: true
@@ -15,4 +17,16 @@ collections:
       - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
       - { label: "Tags", name: "tags", widget: "list", max: 5, min: 0, default: null }
       - { label: "Published?", name: "published", widget: boolean, default: true }
+      - { label: "Body Text", name: "body", widget: "markdown" }
+  - name: "page"
+    label: "Pages"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Order in header", name: "order", widget: number, default: null }
+      - { label: "Permalink", name: "permalink", widget: "string", default: null }
+      - { label: "Custom CSS", name: "stylesheets", widget: "list", default: null }
+      - { label: "Custom JS", name: "scripts", widget: "list", default: null }
       - { label: "Body Text", name: "body", widget: "markdown" }
