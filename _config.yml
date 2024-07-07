@@ -18,6 +18,15 @@ exclude             : [
                         "README.md", "package.json", "package-lock.json"
                       ]
 
+markdown            : kramdown
+highlighter         : rouge
+kramdown:
+  auto_ids: false
+  gfm_emojis: true
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
 defaults:
   - scope:
       path: "_pages/"
@@ -31,4 +40,4 @@ defaults:
     values:
       layout: "post"
       categories: "blog"
-      permalink: /:categories/:year/:i_month/:i_day/:title/
+      permalink: /:categories/:year/:month/:day/:title/

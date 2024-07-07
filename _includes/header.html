@@ -1,3 +1,5 @@
 <header>
-    
+    {% assign pages = site.pages | sort: "order" %}
+    <h2 id="site-title">{{site.title}}</h2>
+    <nav id="site-navigation">{% for page in pages %}{% if page.order %}<a href="{{page.url}}" class="link">{{page.title}}</a>{% endif %}{% endfor %}</nav>
 </header>

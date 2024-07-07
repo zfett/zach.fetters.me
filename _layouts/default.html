@@ -4,17 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{page.title}} — {{site.title}}</title>
+        <meta name="title" content="{{page.title}} — {{site.title}}" />
+        <meta property="og:title" content="{{page.title}} — {{site.title}}" />
+        <meta name="description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
+        <meta property="og:description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{site.url}}{{page.url}}" />
         <link rel="stylesheet" href="/assets/style/fonts.css" type="text/css">
         <link rel="stylesheet" href="/assets/style/main.css" type="text/css">
         {% if page.stylesheets %}
-            {% for stylesheet in page.stylesheets %}
-                <link rel="stylesheet" href="{{stylesheet}}" type="text/css">
-            {% endfor %}
+        {% for stylesheet in page.stylesheets %}
+        <link rel="stylesheet" href="{{stylesheet}}" type="text/css">
+        {% endfor %}
         {% endif %}
         {% if page.scripts %}
-            {% for script in page.scripts %}
-                <script type="text/javascript" src="{{script}}" defer></script>
-            {% endfor %}
+        {% for script in page.scripts %}
+        <script type="text/javascript" src="{{script}}" defer></script>
+        {% endfor %}
         {% endif %}
     </head>
     <body>

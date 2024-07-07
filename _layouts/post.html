@@ -1,3 +1,51 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{page.title}} — {{site.title}}</title>
+        <meta name="title" content="{{page.title}} — {{site.title}}" />
+        <meta property="og:title" content="{{page.title}} — {{site.title}}" />
+        {% if page.subtitle != "" %}
+        <meta name="description" content="{{page.subtitle}}" />
+        <meta property="og:description" content="{{page.subtitle}}" />
+        {% else %}
+        <meta name="description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
+        <meta property="og:description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
+        {% endif %}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{site.url}}{{page.url}}" />
+        <link rel="stylesheet" href="/assets/style/fonts.css" type="text/css">
+        <link rel="stylesheet" href="/assets/style/main.css" type="text/css">
+        {% if page.stylesheets %}
+        {% for stylesheet in page.stylesheets %}
+        <link rel="stylesheet" href="{{stylesheet}}" type="text/css">
+        {% endfor %}
+        {% endif %}
+        {% if page.scripts %}
+        {% for script in page.scripts %}
+        <script type="text/javascript" src="{{script}}" defer></script>
+        {% endfor %}
+        {% endif %}
+    </head>
+    <body>
+        {% include header.html %}
+        <main>
+            <h1 id="title">{{page.title}}</h1>
+            {% if page.subtitle != "" %}
+            <h2 id="subtitle">{{page.subtitle}}</h2>
+            {% endif %}
+            <div id="post-info">
+                {% if page.tags.size > 0 %}
+                <span id="author">Posted by {{site.author.name}} on {{page.date | date: '%A, %B %e, %Y'}}</span>
+                {% assign tags = page.tags | limit: 5 %}
+                <div id="tags">{% for tag in tags %}<span class="tag">{{tag}}</span>{% endfor %}</div>
+                {% else %}
+                <span id="author" style="text-align:center">Posted by {{site.author.name}} on {{page.date | date: '%A, %B %e, %Y'}}</span>
+                {% endif %}
+            </div>
+            {{content}}
+        </main>
+        {% include footer.html %}
+    </body>
+</html>

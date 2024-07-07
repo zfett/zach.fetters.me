@@ -1,3 +1,5 @@
 <footer>
-    
+    <span id="copyright">&copy; {{site.time | date: '%Y'}} {{site.title}}</span>
+    {% include creative-commons.html %}
+    <span id="last-updated">Site last updated on {{site.time | date: '%B %e, %Y'}}</span>
 </footer>

@@ -2,3 +2,5 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
+
+gem "gemoji", "~> 3.0"

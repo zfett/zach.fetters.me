@@ -1,7 +1,9 @@
 ---
-title: "Welcome!"
+title: "Homepage"
+order: 1
 permalink: "/"
 stylesheets: ["/assets/style/page/index.css"]
+scripts: ["https://identity.netlify.com/v1/netlify-identity-widget.js"]
 ---
 ![A moody picture of myself in a mirror holding my Nikon Z fc camera.](/assets/image/portrait.webp){:class="portrait"}
 
@@ -14,8 +16,12 @@ If you're interested in spinning up your own site like mine, feel free to visit 
 ## Recent Posts
 
 {% assign posts = site.posts | limit: 10 %}
+{% if posts.size > 0 %}
 {% for post in posts %}
 
 1. **[{{post.title}}]({{post.url}})** — Posted {{post.date | date: '%A, %b %e, %Y'}}
 
 {% endfor %}
+{% else %}
+_No posts available_
+{% endif %}
