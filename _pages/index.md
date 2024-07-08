@@ -3,7 +3,7 @@ title: "Homepage"
 order: 1
 permalink: "/"
 stylesheets: ["/assets/style/page/index.css"]
-scripts: ["https://identity.netlify.com/v1/netlify-identity-widget.js"]
+scripts: []
 ---
 ![A moody picture of myself in a mirror holding my Nikon Z fc camera.](/assets/image/portrait.webp){:class="portrait"}
 
