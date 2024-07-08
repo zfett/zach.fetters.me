@@ -1,4 +1,5 @@
 @import url("code.css");
+@import url("creative-commons.css");
 
 :root {
     /*Font families*/
@@ -87,8 +88,9 @@ header .link:last-of-type { margin: 0 }
 footer {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto auto;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
     clear: both;
     padding: 20px 40px;
@@ -106,35 +108,6 @@ footer span {
 
 #copyright { text-align: left }
 #last-updated { text-align: right }
-
-/*Creative Commons icons*/
-#creative-commons {
-    position: relative;
-    display: inline-block;
-    justify-self: center;
-    vertical-align: middle;
-    height: 20px;
-}
-
-#creative-commons .cc-icon {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background: white;
-    margin: 0 3px 0 0;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#creative-commons .cc-icon:last-of-type { margin: 0 }
-
-#creative-commons .cc-icon.cc { background-image: url("/assets/image/cc/cc.svg") }
-#creative-commons .cc-icon.by { background-image: url("/assets/image/cc/by.svg") }
-#creative-commons .cc-icon.nc { background-image: url("/assets/image/cc/nc.svg") }
-#creative-commons .cc-icon.sa { background-image: url("/assets/image/cc/sa.svg") }
 
 main {
     padding: 20px 40px;
