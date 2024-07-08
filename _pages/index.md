@@ -1,13 +1,14 @@
 ---
-title: "Homepage"
+title: Homepage
 order: 1
-permalink: "/"
-stylesheets: ["/assets/style/page/index.css"]
+permalink: /
+stylesheets:
+  - /assets/style/page/index.css
 scripts: []
 ---
 ![A moody picture of myself in a mirror holding my Nikon Z fc camera.](/assets/image/portrait.webp){:class="portrait"}
 
-Hello! My name is Zachary Fetters and I am a amateur photographer, web designer, developer, game enjoyer, bad D&D player, and whatever else interests me from time to time. (That's me to the left!)
+Hello! My name is Zachary Fetters and I am an amateur photographer, web designer, developer, game enjoyer, bad D&D player, and whatever else interests me from time to time. (That's me to the left!)
 
 This is my personal website, so expect random ramblings on topics like photography, gaming, design, and programming/tech. Please note that my opinions are my own and are not reflective of those held by any past, current, or future employers or organizations I am a part of.
 
