@@ -10,7 +10,7 @@
     --c-code-background: rgb(20, 30, 40);
     --c-text-normal: rgb(10, 20, 30);
     --c-text-subtle: rgb(100, 110, 120);
-    --c-text-emphasis: rgb(40, 125, 215);
+    --c-text-emphasis: rgb(20, 105, 185);
 
     /*Font sizes*/
     --s-xlarge: 2.5rem;
@@ -36,26 +36,34 @@
 html {
     font-size: 18px;
     font-family: var(--f-sans);
-    background: var(--c-background);
+    background: var(--c-code-background);
     color: var(--c-text-normal);
+    z-index: 0;
 }
 
 body {
     position: relative;
     display: block;
     margin: 0 auto;
+    padding: 71px 0 0 0;
     max-width: var(--breakpoint);
+    background: var(--c-background);
+    z-index: 1;
 }
 
 header {
-    position: relative;
+    position: fixed;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 20px;
     padding: 20px 40px;
-    width: calc(100% - 80px);
+    width: calc(var(--breakpoint) - 80px);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     border-bottom: 1px solid rgba(0, 0, 0, .15);
-    background: linear-gradient(0deg, rgba(40, 125, 215, .1), rgba(40, 125, 215, 0))
+    background: var(--c-background);
+    z-index: 4;
 }
 
 #site-title {
@@ -84,13 +92,14 @@ footer {
     clear: both;
     padding: 20px 40px;
     border-top: 1px solid rgba(0, 0, 0, .15);
-    background: linear-gradient(180deg, rgba(40, 125, 215, .1), rgba(40, 125, 215, 0))
+    background: var(--c-background);
+    z-index: 3;
 }
 
 footer span {
     font-size: var(--s-small);
     color: var(--c-text-subtle);
-    line-height: 20px;
+    line-height: 30px;
     vertical-align: middle;
 }
 
@@ -126,7 +135,11 @@ footer span {
 #creative-commons .cc-icon.nc { background-image: url("/assets/image/cc/nc.svg") }
 #creative-commons .cc-icon.sa { background-image: url("/assets/image/cc/sa.svg") }
 
-main { padding: 20px 40px }
+main {
+    padding: 20px 40px;
+    min-height: calc(100vh - 182px);
+    z-index: 2;
+}
 
 h1 {
     font-size: var(--s-xlarge);
@@ -139,7 +152,7 @@ h1 {
 h2 {
     font-size: var(--s-large);
     line-height: var(--s-large);
-    margin: 0 0 var(--s-normal) 0;
+    margin: var(--s-normal) 0;
     text-align: center;
 }
 
@@ -148,6 +161,8 @@ p {
     line-height: var(--s-large);
     margin: 0 0 var(--s-normal) 0;
 }
+
+p:last-of-type { margin: 0 }
 
 a {
     font-weight: bold;
@@ -243,7 +258,7 @@ pre {
     margin: 0 5px 0 0;
     font-family: var(--f-mono);
     text-transform: lowercase;
-    color: var(--c-text-emphasis);
+    color: var(--c-text-normal);
     font-weight: bold;
     line-height: 20px;
 }
