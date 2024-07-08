@@ -130,7 +130,7 @@ h2 {
 p {
     font-size: var(--s-normal);
     line-height: var(--s-large);
-    margin: 0 0 var(--s-normal) 0;
+    margin: var(--s-normal) 0;
 }
 
 p:last-of-type { margin: 0 }
