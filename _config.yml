@@ -10,7 +10,7 @@ collections:
     relative_directory : _posts
     label              : "posts"
 
-safe                : false
+safe                : true
 include             : [".htaccess", "_pages/"]
 exclude             : [
                         "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", 
