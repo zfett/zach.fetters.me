@@ -23,12 +23,12 @@ To publish this site with all features on Netlify, please ensure you've setup th
 
 ### Build settings
 
-**Runtime**: Leave blank
-**Base directory**: `/`
-**Package directory**: Leave blank
-**Build command**: `bundle exec jekyll build`
-**Publish directory**: `_site`
-**Functions directory**: Leave default
+- **Runtime**: Leave blank  
+- **Base directory**: `/`  
+- **Package directory**: Leave blank  
+- **Build command**: `bundle exec jekyll build`  
+- **Publish directory**: `_site`  
+- **Functions directory**: Leave default  
 
 ### Decap CMS
 
