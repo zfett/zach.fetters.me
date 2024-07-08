@@ -133,7 +133,7 @@ p {
     margin: var(--s-normal) 0;
 }
 
-p:last-of-type { margin: 0 }
+p:last-of-type { margin: var(--s-normal) 0 0 0 }
 
 a {
     font-weight: bold;
