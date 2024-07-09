@@ -3,7 +3,7 @@ title: Creative Commons Modular Badge
 subtitle: A Jekyll implementation for displaying Creative Common's license badges easily!
 tags:
   - programming
-  - creativecommons
+  - creative-commons
   - jekyll
 published: true
 ---
