@@ -30,6 +30,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - { label: "Category", name: "categories", widget: "select", options: ["technology","programming","photography","art","gaming","design","miscellaneous","meta"] }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", picker_utc: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
       - { label: "Tags", name: "tags", widget: "list", max: 5, min: 0, default: null }
@@ -44,6 +46,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Show in header?", name: "header", widget: "boolean" }
       - { label: "Order in header", name: "order", widget: number, default: null }
       - { label: "Permalink", name: "permalink", widget: "string", default: null }
       - { label: "Custom CSS", name: "stylesheets", widget: "list", default: null }

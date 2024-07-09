@@ -135,6 +135,14 @@ p {
 
 p:last-of-type { margin: var(--s-normal) 0 0 0 }
 
+hr {
+    border: 0;
+    border-top: 1px solid var(--c-border);
+    height: 0px;
+    width: 100%;
+    margin: 20px 0;
+}
+
 a {
     font-weight: bold;
     color: var(--c-text-emphasis);
@@ -202,6 +210,18 @@ pre {
     pointer-events: none;
 }
 
+#category {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--c-text-subtle);
+    font-size: var(--s-small);
+    line-height: var(--s-small);
+}
+
 #subtitle {
     font-size: var(--s-normal);
     line-height: var(--s-normal);
@@ -239,6 +259,19 @@ pre {
 }
 
 #tags .tag:last-of-type { margin: 0 }
+
+#pagination { 
+    text-align: center;
+    color: var(--c-text-subtle);
+    font-family: var(--f-mono);
+    font-size: var(--s-small);
+    line-height: var(--s-small);
+    margin: 20px 0 0 0;
+}
+
+#pagination a {
+    font-size: var(--s-normal);
+}
 
 @media screen and (max-width: 1000px) {
     :root { --max-width: 700px }

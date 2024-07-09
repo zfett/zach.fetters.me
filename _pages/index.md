@@ -1,5 +1,6 @@
 ---
 title: Homepage
+header: true
 order: 1
 permalink: /
 stylesheets:

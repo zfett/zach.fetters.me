@@ -33,6 +33,7 @@
     <body>
         {% include header.html %}
         <main>
+            <span id="category">{{page.categories}}</span>
             <h1 id="title">{{page.title}}</h1>
             {% if page.subtitle != "" %}
             <h2 id="subtitle">{{page.subtitle}}</h2>

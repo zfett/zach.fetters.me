@@ -3,6 +3,20 @@ author:
   name: "Zachary Fetters"
   email: "hi@zach.fetters.me"
 timezone: "America/New_York"
+plugins:
+  - jekyll-paginate-v2
+gems: [jekyll-paginate-v2]
+
+pagination:
+  enabled: true
+  per_page: 20
+  permalink: /page/:num/
+  sort_field: "date"
+  title: ":title"
+  sort_reverse: true
+  trail:
+    before: 1
+    after: 1
 
 collections:
   posts:
@@ -11,7 +25,7 @@ collections:
     label              : "posts"
 
 future              : true
-safe                : true
+safe                : false
 include             : [".htaccess", "_pages/"]
 exclude             : [
                         "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", 
@@ -40,5 +54,4 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      categories: "blog"
-      permalink: /:categories/:year/:month/:day/:title/
+      permalink: "/blog/:categories/:year/:title/"

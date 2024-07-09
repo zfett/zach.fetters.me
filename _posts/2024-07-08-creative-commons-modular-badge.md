@@ -6,6 +6,8 @@ tags:
   - creative-commons
   - jekyll
 published: true
+categories: "programming"
+date: 2024-07-08
 ---
 Recently, I've decided to redesign my personal website (the one you're on now) and I wanted to display a badge for the license that my content is available under: Creative Commons BY-NC-SA. I could've just used the badge images that the Creative Commons provides, but I wanted to create a more modular implementation. I've made an include that takes user input and outputs a badge list that looks like the following:
 
