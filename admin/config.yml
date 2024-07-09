@@ -3,15 +3,33 @@ local_backend: false
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: "New {{collection}} - {{slug}}"
+    update: "Edited {{slug}} in {{collection}}"
+    delete: "Removed {{slug}} in {{collection}}"
+    uploadMedia: "Uploaded new media - {{path}}"
+    deleteMedia: "Removed media - {{path}}"
+    openAuthoring: "{{message}} - {{author-name}}"
 
+site_url: "https://zach.fetters.me"
 media_folder: "assets/uploads"
+locale: "en"
+show_preview_links: false
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
   - name: "post"
     label: "Blog"
+    label_singular: "Post"
+    sortable_fields: ["title", "date", "subtitle", "tags", "commit_author"]
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{date | date('YYYY-MM-DD')}} - {{body | truncate(20, '***')}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
@@ -20,9 +38,12 @@ collections:
       - { label: "Body Text", name: "body", widget: "markdown" }
   - name: "page"
     label: "Pages"
+    label_singular: "Page"
+    sortable_fields: ["title", "date", "commit_author", "commit_date"]
     folder: "_pages"
     create: true
     slug: "{{slug}}"
+    summary: "{{body | truncate(40, '***')}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Order in header", name: "order", widget: number, default: null }
