@@ -29,7 +29,7 @@ collections:
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{title}} - {{date | date('YYYY-MM-DD')}} - {{body | truncate(20, '***')}}"
+    summary: "'{{title}}' - Posted on {{date | date: '%A, %B %e, %Y'}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
@@ -43,7 +43,7 @@ collections:
     folder: "_pages"
     create: true
     slug: "{{slug}}"
-    summary: "{{body | truncate(40, '***')}}"
+    summary: "{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Order in header", name: "order", widget: number, default: null }
