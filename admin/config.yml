@@ -25,11 +25,10 @@ collections:
   - name: "post"
     label: "Blog"
     label_singular: "Post"
-    sortable_fields: ["title", "date", "subtitle", "tags", "commit_author"]
+    sortable_fields: ["title", "commit_date", "subtitle", "tags", "commit_author"]
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "'{{title}}' - Posted on {{date | date: '%A, %B %e, %Y'}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
@@ -43,7 +42,6 @@ collections:
     folder: "_pages"
     create: true
     slug: "{{slug}}"
-    summary: "{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Order in header", name: "order", widget: number, default: null }
