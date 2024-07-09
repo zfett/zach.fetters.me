@@ -32,6 +32,8 @@ To publish this site with all features on Netlify, please ensure you've setup th
 
 ### Decap CMS
 
+_(Note: the Decap CMS integration is completely optional, but highly recommended for first-time users. If you don't want to use it, delete the `admin` folder at the root of the project.)_
+
 To use the Decap CMS to allow for easy site management, please ensure that Netlify Identity is enabled and configured. In the Identity integration settings, use the following settings:
 
 - Set registration to "invite only"
