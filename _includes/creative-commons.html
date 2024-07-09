@@ -1,6 +1,6 @@
 <div id="creative-commons">
     {% assign terms = include.terms | split: " " %}
-    <a href="{{include.url}}">
+    {% if include.url %}<a href="{{include.url}}">{% endif %}
         <div class="cc-icon cc" title="Creative Commons"></div>
         {% for term in terms %}
         {% if term == "by" %}
@@ -15,5 +15,5 @@
         <div class="cc-icon zero" title="Public domain"></div>
         {% endif %}
         {% endfor %}
-    </a>
+    {% if include.url %}</a>{% endif %}
 </div>
