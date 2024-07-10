@@ -19,6 +19,7 @@
 
     /*Breakpoint*/
     --max-width: 1000px;
+    --breakpoint: 700px;
 }
 
 ::selection, ::-moz-selection {
@@ -201,6 +202,11 @@ pre {
     line-height: var(--s-large);
 }
 
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
 .rouge-gutter.gl { padding: 0 }
 
 .lineno { 
@@ -271,6 +277,106 @@ pre {
 
 #pagination a {
     font-size: var(--s-normal);
+}
+
+#contact-form {
+    position: relative;
+    display: block;
+    padding: 20px;
+    width: calc(100% - 42px);
+    max-width: calc(var(--breakpoint) - 122px);
+    min-width: 304px;
+    margin: 20px auto 0 auto;
+    background: white;
+    border: 1px solid var(--c-border);
+    overflow: hidden;
+}
+
+label {
+    position: relative;
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 20px;
+    align-items: center;
+    margin: 0 0 15px 0;
+    font-size: var(--s-small);
+    color: var(--c-text-subtle);
+}
+
+input, textarea {
+    position: relative;
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid var(--c-border);
+    background: white;
+    margin: 0;
+    width: 100%;
+    max-width: calc(100% - 22px);
+    max-height: 300px;
+    font-family: var(--f-sans);
+    font-size: var(--s-small);
+    overflow: hidden;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    max-width: 150px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="submit"]:hover { background: var(--c-border) }
+
+#submission-field {
+    display: grid;
+    grid-template-columns: auto 150px;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#captcha {
+    position: relative;
+    display: block;
+    width: 304px;
+    height: 78px;
+}
+
+#captcha::after {
+    content: "You must enable JavaScript and/or disable your adblocker to fill the captcha.";
+    position: absolute;
+    display: block;
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--s-small);
+    line-height: var(--s-normal);
+    text-align: center;
+    color: var(--c-text-subtle);
+}
+
+@media screen and (max-width: 700px) {
+    label {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        margin: 0 0 20px 0;
+    }
+
+    #submission-field {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 20;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #captcha { margin: 0 auto }
+
+    input[type="submit"] { margin: 0 auto }
 }
 
 @media screen and (max-width: 1000px) {

@@ -1,0 +1,10 @@
+<form name="contact" method="POST" id="contact-form" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+    <label class="hidden">Ignore this field if you're human: <input name="bot-field"></label>
+    <label>Your Name: <input name="name" type="text" autocomplete="off" placeholder="Jane Doe"></label>
+    <label>Your Email: <input name="email" type="email" autocomplete="off" placeholder="jane.doe@example.com" required></label>
+    <label>Your Message: <textarea maxlength="1000" placeholder="Lorem ipsum..." required></textarea></label>
+    <div id="submission-field">
+        <div id="captcha" data-netlify-recaptcha="true"></div>
+        <input type="submit" value="Send Message">
+    </div>
+</form>
