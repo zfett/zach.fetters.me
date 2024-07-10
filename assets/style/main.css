@@ -203,8 +203,8 @@ pre {
 }
 
 .hidden {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
 
 .rouge-gutter.gl { padding: 0 }
@@ -285,7 +285,7 @@ pre {
     padding: 20px;
     width: calc(100% - 42px);
     max-width: calc(var(--breakpoint) - 122px);
-    min-width: 304px;
+    min-width: 250px;
     margin: 20px auto 0 auto;
     background: white;
     border: 1px solid var(--c-border);
@@ -297,11 +297,14 @@ label {
     display: grid;
     grid-template-columns: 95px 1fr;
     gap: 20px;
-    align-items: center;
     margin: 0 0 15px 0;
     font-size: var(--s-small);
+    line-height: 26px;
+    vertical-align: middle;
     color: var(--c-text-subtle);
 }
+
+label:last-of-type { margin: 0 }
 
 input, textarea {
     position: relative;
@@ -313,6 +316,7 @@ input, textarea {
     width: 100%;
     max-width: calc(100% - 22px);
     max-height: 300px;
+    min-height: 16px;
     font-family: var(--f-sans);
     font-size: var(--s-small);
     overflow: hidden;
@@ -320,48 +324,60 @@ input, textarea {
 }
 
 input[type="submit"] {
-    width: 100%;
-    max-width: 150px;
+    position: relative;
+    display: block;
     cursor: pointer;
-    padding: 10px;
     text-align: center;
+    min-width: 120px;
 }
 
 input[type="submit"]:hover { background: var(--c-border) }
 
 #submission-field {
     display: grid;
-    grid-template-columns: auto 150px;
+    grid-template-columns: 1fr auto;
     gap: 20px;
     align-items: center;
     justify-content: space-between;
+    border-top: 1px solid var(--c-border);
+    padding: 20px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
-#captcha {
-    position: relative;
+#text {
     display: block;
-    width: 304px;
-    height: 78px;
-}
-
-#captcha::after {
-    content: "You must enable JavaScript and/or disable your adblocker to fill the captcha.";
-    position: absolute;
-    display: block;
-    width: calc(100% - 20px);
-    margin: 0 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: var(--s-small);
-    line-height: var(--s-normal);
-    text-align: center;
     color: var(--c-text-subtle);
-    z-index: 0;
+    font-size: var(--s-small);
+    line-height: var(--s-small);
+    font-family: var(--f-mono);
 }
 
-.g-recaptcha {
+#text div {
+    display: inline;
+    color: var(--c-text-normal);
+}
+
+#question-input { 
+    display: inline;
+    max-width: 50px;
+    margin: 0 0 0 15px;
+    padding: 5px;
+}
+
+#human-question {
     position: relative;
-    z-index: 1;
+    display: block;
+    width: 100%;
+}
+
+#message {
+    position: relative;
+    display: block;
+    margin: 20px 0 0 0;
+    font-size: var(--s-small);
+    line-height: var(--s-small);
+    color: rgb(255, 75, 75);
+    font-weight: bold;
 }
 
 @media screen and (max-width: 700px) {
@@ -375,14 +391,20 @@ input[type="submit"]:hover { background: var(--c-border) }
     #submission-field {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        gap: 20;
+        gap: 10;
         align-items: center;
         justify-content: space-around;
     }
 
     #captcha { margin: 0 auto }
 
-    input[type="submit"] { margin: 0 auto }
+    input[type="submit"] {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #text { text-align: center }
 }
 
 @media screen and (max-width: 1000px) {
