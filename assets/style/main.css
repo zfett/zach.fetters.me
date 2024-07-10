@@ -356,6 +356,12 @@ input[type="submit"]:hover { background: var(--c-border) }
     line-height: var(--s-normal);
     text-align: center;
     color: var(--c-text-subtle);
+    z-index: 0;
+}
+
+.g-recaptcha {
+    position: relative;
+    z-index: 1;
 }
 
 @media screen and (max-width: 700px) {
