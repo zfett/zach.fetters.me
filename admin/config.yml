@@ -12,9 +12,15 @@ backend:
     openAuthoring: "{{message}} - {{author-name}}"
 
 site_url: "https://zach.fetters.me"
-media_folder: "assets/uploads"
 locale: "en"
 show_preview_links: false
+
+media_folder:
+  name: cloudinary
+  config:
+    cloud_name: attkzach
+    api_key: 884321435133287
+    use_transformations: true
 
 slug:
   encoding: "ascii"
