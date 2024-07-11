@@ -14,7 +14,7 @@
         <meta property="og:description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
         {% endif %}
         {% if page.cover %}
-        <meta property="og:image" content="{{site.url}}{{page.cover}}" />
+        <meta property="og:image" content="{{page.cover}}" />
         {% endif %}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{site.url}}{{page.url}}" />
