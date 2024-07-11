@@ -4,12 +4,13 @@
     --f-mono: 'Fira Code', monospace;
 
     /*Color palettes*/
-    --c-background: rgb(230, 240, 250);
+    --c-foreground: rgb(255, 255, 255);
+    --c-background: rgb(235, 235, 235);
     --c-code-background: rgb(20, 30, 40);
     --c-text-normal: rgb(10, 20, 30);
     --c-text-subtle: rgb(100, 110, 120);
     --c-text-emphasis: rgb(20, 105, 185);
-    --c-border: rgba(0, 0, 0, .15);
+    --c-border: rgb(235, 235, 235);
 
     /*Font sizes*/
     --s-xlarge: 2.5rem;
@@ -36,7 +37,7 @@
 html {
     font-size: 18px;
     font-family: var(--f-sans);
-    background: var(--c-code-background);
+    background: var(--c-background);
     color: var(--c-text-normal);
     z-index: 0;
 }
@@ -47,7 +48,7 @@ body {
     margin: 0 auto;
     min-height: 100vh;
     max-width: var(--max-width);
-    background: var(--c-background);
+    background: var(--c-foreground);
     z-index: 1;
 }
 
@@ -63,7 +64,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     border-bottom: 1px solid var(--c-border);
-    background: var(--c-background);
+    background: var(--c-foreground);
     z-index: 4;
 }
 
@@ -94,7 +95,7 @@ footer {
     clear: both;
     padding: 20px 40px;
     border-top: 1px solid var(--c-border);
-    background: var(--c-background);
+    background: var(--c-foreground);
     z-index: 3;
 }
 
@@ -197,7 +198,6 @@ pre {
     margin: var(--s-normal) 0;
     border-radius: 10px;
     background: var(--c-code-background);
-    color: var(--c-background);
     overflow: auto hidden;
     line-height: var(--s-large);
 }
@@ -271,7 +271,7 @@ pre {
 #tags .tag {
     padding: 5px 10px;
     border-radius: 5px;
-    background: rgba(0, 0, 0, .05);
+    background: var(--c-border);
     margin: 0 5px 0 0;
     font-family: var(--f-mono);
     text-transform: lowercase;
@@ -302,7 +302,7 @@ pre {
     max-width: calc(var(--breakpoint) - 122px);
     min-width: 250px;
     margin: 20px auto 0 auto;
-    background: white;
+    background:var(--c-foreground);
     border: 1px solid var(--c-border);
     overflow: hidden;
 }
@@ -326,7 +326,8 @@ input, textarea {
     display: block;
     padding: 5px 10px;
     border: 1px solid var(--c-border);
-    background: white;
+    background: var(--c-foreground);
+    color: var(--c-text-normal);
     margin: 0;
     width: 100%;
     max-width: calc(100% - 22px);
@@ -464,4 +465,18 @@ input[type="submit"]:hover { background: var(--c-border) }
     #copyright,
     #creative-commons,
     #last-updated { text-align: center }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c-foreground: rgb(20, 20, 20);
+        --c-background: rgb(0, 0, 0);
+        --c-code-background: rgb(20, 30, 40);
+        --c-text-normal: rgb(235, 245, 255);
+        --c-text-subtle: rgb(150, 160, 170);
+        --c-text-emphasis: rgb(80, 165, 245);
+        --c-border: rgb(50, 50, 50);
+    }
+
+    #creative-commons .cc-icon { filter: invert(1.0) }
 }
