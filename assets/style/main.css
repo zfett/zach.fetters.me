@@ -193,7 +193,7 @@ code { font-family: var(--f-mono) }
 pre {
     position: relative;
     display: block;
-    padding: 5px 20px;
+    padding: 5px 10px;
     margin: var(--s-normal) 0;
     border-radius: 10px;
     background: var(--c-code-background);
@@ -205,15 +205,6 @@ pre {
 .hidden {
     display: none !important;
     visibility: hidden !important;
-}
-
-.rouge-gutter.gl { padding: 0 }
-
-.lineno { 
-    padding: 0;
-    color: var(--c-text-subtle);
-    user-select: none;
-    pointer-events: none;
 }
 
 #cover {
