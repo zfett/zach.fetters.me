@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "css-minify": "^2.0.0",
+    "google-closure-compiler": "^20240317.0.0"
+  },
+  "scripts": {
+    "minify": "rm -rf ./assets/style/ && css-minify -d /static/style/ -o /assets/style/ && css-minify -d /static/style/page/ -o /assets/style/ && cat ./assets/style/* > ./assets/style/style.min.css && cd ./assets/style/ && find . ! -name 'style.min.css' -type f -exec rm -f {} +",
+    "compile": "rm -rf ./assets/script/ && google-closure-compiler -O 'ADVANCED' --emit_use_strict true --js './static/script/form-input.js' --js_output_file './assets/script/form-input.min.js'",
+    "build": "npm run minify && npm run compile && bundle exec jekyll build"
+  }
+}

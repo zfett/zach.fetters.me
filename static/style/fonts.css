@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'Inter';
     src: local('Inter Bold'), local('Inter-Bold'),
-        url('/assets/font/inter/subset-Inter-Bold.woff2') format('woff2'),
-        url('/assets/font/inter/subset-Inter-Bold.ttf') format('truetype');
+        url('/assets/font/inter/bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -11,8 +10,7 @@
 @font-face {
     font-family: 'Inter';
     src: local('Inter Regular'), local('Inter-Regular'),
-        url('/assets/font/inter/subset-Inter-Regular.woff2') format('woff2'),
-        url('/assets/font/inter/subset-Inter-Regular.ttf') format('truetype');
+        url('/assets/font/inter/regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -21,8 +19,7 @@
 @font-face {
     font-family: 'Fira Code';
     src: local('Fira Code Regular'), local('FiraCode-Regular'),
-        url('/assets/font/fira-code/subset-FiraCode-Regular.woff2') format('woff2'),
-        url('/assets/font/fira-code/subset-FiraCode-Regular.ttf') format('truetype');
+        url('/assets/font/fira-code/regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -31,8 +28,7 @@
 @font-face {
     font-family: 'Fira Code';
     src: local('Fira Code Bold'), local('FiraCode-Bold'),
-        url('/assets/font/fira-code/subset-FiraCode-Bold.woff2') format('woff2'),
-        url('/assets/font/fira-code/subset-FiraCode-Bold.ttf') format('truetype');
+        url('/assets/font/fira-code/bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
