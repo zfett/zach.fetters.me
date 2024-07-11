@@ -7,7 +7,7 @@ stylesheets:
   - /assets/style/page/index.css
 scripts: []
 ---
-![A moody picture of myself in a mirror holding my Nikon Z fc camera.](/assets/image/portrait.webp){:class="portrait"}
+![A moody picture of myself in a mirror holding my Nikon Z fc camera.](https://res.cloudinary.com/attkzach/image/private/s--cDzZnjRi--/v1720717581/uploads/nkjzo3qoxbgou2bwkqiy.webp){:class="portrait"}
 
 Hello! My name is Zachary Fetters and I am an amateur photographer, web designer, developer, game enjoyer, bad D&D player, and whatever else interests me from time to time. (That's me to the left!)
 
@@ -25,5 +25,5 @@ If you're interested in spinning up your own site like mine, feel free to visit 
 
 {% endfor %}
 {% else %}
-_No posts available_
+*No posts available*
 {% endif %}
