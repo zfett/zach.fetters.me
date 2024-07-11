@@ -13,6 +13,9 @@
         <meta name="description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
         <meta property="og:description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
         {% endif %}
+        {% if page.cover %}
+        <meta property="og:image" content="{{site.url}}{{page.cover}}" />
+        {% endif %}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{site.url}}{{page.url}}" />
         <link rel="stylesheet" href="/assets/style/fonts.css" type="text/css">
@@ -33,6 +36,11 @@
     <body>
         {% include header.html %}
         <main>
+            {% if page.cover %}
+            <div id="cover">
+                <img src="{{page.cover}}"/>
+            </div>
+            {% endif %}
             <span id="category">{{page.categories}}</span>
             <h1 id="title">{{page.title}}</h1>
             {% if page.subtitle != "" %}

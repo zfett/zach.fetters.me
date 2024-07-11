@@ -216,6 +216,30 @@ pre {
     pointer-events: none;
 }
 
+#cover {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: calc(100% + 80px);
+    max-height: 500px;
+    border-bottom: 1px solid var(--c-border);
+    margin: -20px 0 20px -40px;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    font-size: 0;
+}
+
+#cover img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+}
+
 #category {
     position: relative;
     display: block;
