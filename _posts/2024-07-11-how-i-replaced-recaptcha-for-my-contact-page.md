@@ -3,7 +3,7 @@ categories: programming
 date: 2024-07-10
 title: How I replaced reCAPTCHA for my contact page!
 subtitle: From 2.5 MB to 145 KB!
-cover: /assets/uploads/screenshot-2024-07-10-at-20-24-00-contact-zachary-fetters.png
+cover: /assets/uploads/screenshot-2024-07-10-at-20-24-00-contact-zachary-fetters.webp
 tags:
   - recaptcha
   - javascript
