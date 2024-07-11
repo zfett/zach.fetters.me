@@ -49,6 +49,8 @@ Now, I can already hear people telling me, "but Zach! People can just easily man
 
 ### Results
 
-With all this work, we have a functional human validation quiz and, as a byproduct, reduced our contact page's transfer size from 2.5 MB with Google's reCAPTCHA to 144 KB with my homemade solution!
+With all this work, we have a functional human validation quiz and, as a byproduct, reduced our contact page's transfer size from 2.5 MB with Google's reCAPTCHA to 144 KB with my homemade solution! (That's a 39.3% decrease!)
+
+![A screenshot of Firefox's network developer tools, showing a total network transfer size of 144.38 KB after removing Google's reCAPTCHA and using my homemade solution.](/assets/uploads/screenshot-from-2024-07-10-19-17-23.png)
 
 The code for this little project is available on the [GitHub repo of this site](https://github.com/zfett/zach.fetters.me/blob/main/assets/script/form-input.js). A future potential project would be to port a lot of this code to a serverless function and do the checking externally via an API rather than client-side. I fear that would be a little TOO overkill for this, so I'll leave it to more curious programmers than myself.
