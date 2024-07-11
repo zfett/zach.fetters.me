@@ -7,7 +7,7 @@ cover: /assets/uploads/screenshot-2024-07-10-at-20-24-00-contact-zachary-fetters
 tags:
   - recaptcha
   - javascript
-  - web-programming
+  - webdev
 published: true
 ---
 I've recently added a form to my contact page, and I originally used Netlify's reCAPTCHA integration to help keep bots away from the form, along with a honeypot field. I learned, however, after taking a peep at the page's network statistics that I was peeking at around 2.5 MB of overhead, most of which was from Google's reCAPTCHA embed.
