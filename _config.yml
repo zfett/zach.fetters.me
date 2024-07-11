@@ -3,6 +3,7 @@ author:
   name: "Zachary Fetters"
   email: "hi@zach.fetters.me"
 timezone: "America/New_York"
+url: https://zach.fetters.me
 plugins:
   - jekyll-paginate-v2
 gems: [jekyll-paginate-v2]
