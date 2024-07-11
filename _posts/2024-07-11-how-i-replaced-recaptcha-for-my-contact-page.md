@@ -3,7 +3,7 @@ categories: programming
 date: 2024-07-10
 title: How I replaced reCAPTCHA for my contact page!
 subtitle: From 2.5 MB to 145 KB!
-cover: /assets/uploads/screenshot-2024-07-10-at-20-24-00-contact-zachary-fetters.webp
+cover: https://res.cloudinary.com/attkzach/image/private/s--h2EsTvcc--/v1720715893/uploads/dbuup1b7pfe9fxczjgm7.webp
 tags:
   - recaptcha
   - javascript
@@ -12,7 +12,7 @@ published: true
 ---
 I've recently added a form to my contact page, and I originally used Netlify's reCAPTCHA integration to help keep bots away from the form, along with a honeypot field. I learned, however, after taking a peep at the page's network statistics that I was peeking at around 2.5 MB of overhead, most of which was from Google's reCAPTCHA embed.
 
-![A screenshot of Firefox's network developer tools, showing a total network transfer size of 2.49 MB with Google's reCAPTCHA on the page.](/assets/uploads/screenshot-from-2024-07-10-15-43-57.png)
+![A screenshot of Firefox's network developer tools, showing a total network transfer size of 2.49 MB with Google's reCAPTCHA on the page.](https://res.cloudinary.com/attkzach/image/private/s--n2Dk-HIw--/v1720715893/uploads/cvoyv22pbzko0j0ilkay.webp)
 
 For most websites, this would be a negligible amount of bandwidth for a page. However, I want to run a tight ship around here, so I needed to find a way to give bots a hard time without breaking the bandwidth bank (my theoretical max for one page is around 300 KB. Since my site is mainly text and CSS, this shouldn't be too hard...)
 
@@ -139,6 +139,6 @@ Now, I can already hear people telling me, "but Zach! People can just easily man
 
 With all this work, we have a functional human validation quiz and, as a byproduct, reduced our contact page's transfer size from 2.5 MB with Google's reCAPTCHA to 144 KB with my homemade solution! (That's a 39.3% decrease!)
 
-![A screenshot of Firefox's network developer tools, showing a total network transfer size of 144.38 KB after removing Google's reCAPTCHA and using my homemade solution.](/assets/uploads/screenshot-from-2024-07-10-19-17-23.png)
+![A screenshot of Firefox's network developer tools, showing a total network transfer size of 144.38 KB after removing Google's reCAPTCHA and using my homemade solution.](https://res.cloudinary.com/attkzach/image/private/s--XURATdiF--/v1720715893/uploads/smlxihol06hicnf2sxpx.webp)
 
 The code for this little project is available on the [GitHub repo of this site](https://github.com/zfett/zach.fetters.me/blob/main/assets/script/form-input.js). A future potential project would be to port a lot of this code to a serverless function and do the checking externally via an API rather than client-side. I fear that would be a little TOO overkill for this, so I'll leave it to more curious programmers than myself.
