@@ -6,8 +6,8 @@ Personal website - Made using Jekyll + Decap CMS
 
 ## Requirements
 
-- Ruby v3.6.0 or greater
-- Ruby Bundler (if not pre-installed with your Ruby installation)
+- Ruby v2.7.2 or greater
+- Ruby bundler v2.3.27 or greater
 
 ## Local Setup
 
@@ -26,7 +26,7 @@ To publish this site with all features on Netlify, please ensure you've setup th
 - **Runtime**: Leave blank  
 - **Base directory**: `/`  
 - **Package directory**: Leave blank  
-- **Build command**: `bundle exec jekyll build`  
+- **Build command**: `npm run build`  
 - **Publish directory**: `_site`  
 - **Functions directory**: Leave default  
 
