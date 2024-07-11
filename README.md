@@ -7,7 +7,7 @@ Personal website - Made using Jekyll + Decap CMS
 ## Requirements
 
 - Ruby v2.7.2 or greater
-- Ruby Bundler (if not pre-installed with your Ruby installation)
+- Ruby bundler v2.3.27 or greater
 
 ## Local Setup
 
