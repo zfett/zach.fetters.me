@@ -6,7 +6,7 @@
     /*Color palettes*/
     --c-foreground: rgb(255, 255, 255);
     --c-background: rgb(235, 235, 235);
-    --c-code-background: rgb(20, 30, 40);
+    --c-code-background: rgb(30, 30, 30);
     --c-text-normal: rgb(10, 20, 30);
     --c-text-subtle: rgb(100, 110, 120);
     --c-text-emphasis: rgb(20, 105, 185);
@@ -471,7 +471,6 @@ input[type="submit"]:hover { background: var(--c-border) }
     :root {
         --c-foreground: rgb(20, 20, 20);
         --c-background: rgb(0, 0, 0);
-        --c-code-background: rgb(20, 30, 40);
         --c-text-normal: rgb(235, 245, 255);
         --c-text-subtle: rgb(150, 160, 170);
         --c-text-emphasis: rgb(80, 165, 245);
