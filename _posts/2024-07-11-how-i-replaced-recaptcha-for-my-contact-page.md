@@ -24,11 +24,40 @@ I needed to create a system that would be trivially easy for most humans to pass
 
 The code, originally, was simple. Pseudo-randomly (`Math.random()`) generate two numbers, store them in a variable, show them in the user interface. When the user types in a value, check if that value equals the two variables added together. If it doesn't, don't let them submit the form. In my typical fashion, I over-engineered it in the end.
 
-![A screenshot of some JavaScript code. This code is responsible for generating the two number values and displaying them on the form page, as well as generating a simple hash for later validation.](/assets/uploads/screenshot-from-2024-07-10-19-30-29.png)
+```javascript
+function generateNumbers() {
+    var leftNumber = Math.floor(Math.random() * 10 + 1); //1...10
+    var rightNumber = Math.floor(Math.random() * 10 + 1);
+
+    lastGenerated = Date.now();
+
+    LEFT_NUMBER_ELEM.innerHTML = leftNumber;
+    RIGHT_NUMBER_ELEM.innerHTML = rightNumber;
+
+    INPUT_FIELD.value = null;
+
+    generatedHash = createHash(`${lastGenerated}${leftNumber}${rightNumber}`);
+}
+```
 
 Pretty simple, right? Generate two numbers, store the time they were generated, and show these numbers on the contact form. But, what's happening at the bottom? Something about a "hash?" That's right! We're combining the timestamp epoch value and the two number values into a string, then hashing it.
 
-![A screenshot of JavaScript code. This code takes a string and generates a numerical hash. This code was copied from GeeksForGeeks.org.](/assets/uploads/screenshot-from-2024-07-10-19-30-21.png)
+```javascript
+//https://www.geeksforgeeks.org/how-to-create-hash-from-string-in-javascript/
+function createHash(string) {
+    var hash = 0;
+
+    if (string.length == 0) return hash;
+
+    for (var i = 0; i < string.length; i++) {
+        var char = string.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+
+    return hash;
+}
+```
 
 This code, shamelessly [stolen from GeeksForGeeks.org](https://www.geeksforgeeks.org/how-to-create-hash-from-string-in-javascript/#using-bitwise-xor-operation), takes in a string and, by using a bitwise XOR operation, generates a numerical hash from said string. Similar to how Minecraft converts seed strings to usable numerical values for terrain generation. Our hash works by combining the epoch time of the generation for the number values and those two values into a string. This is, honestly, SEVERELY overkill for a simple verification question, but I'll get to why I'm using hash values later.
 
@@ -40,11 +69,69 @@ Now that we've generated our values and hash, we need to validate the user's inp
 4. Check if the value input is blank.
 5. Lastly, check if the user's answer is correct.
 
-![A screenshot of JavaScript code. A function for checking and validating user input via the math question.](/assets/uploads/screenshot-from-2024-07-10-19-45-16.png)
+```javascript
+function validateInput() {
+    var generationEval = lastGenerated !== null; //check to see if we've generated numbers
+
+    if (generationEval) {
+        var hashCheck = createHash(`${lastGenerated}${LEFT_NUMBER_ELEM.innerHTML}${RIGHT_NUMBER_ELEM.innerHTML}`);
+        var leftNumber = Number(LEFT_NUMBER_ELEM.innerHTML);
+        var rightNumber = Number(RIGHT_NUMBER_ELEM.innerHTML);
+        var userInput = Number(INPUT_FIELD.value);
+
+        var attemptEval = attempts < 1; //check if user hasn't attempted
+        var timeEval = Date.now() - lastGenerated >= 5000; //check if more than 5 seconds passed from last attempt
+        var hashEval = hashCheck == generatedHash; //check if hashes match
+        var emptyEval = INPUT_FIELD.value !== ""; //check if input is not empty
+        var inputEval = leftNumber + rightNumber === userInput; //check if numbers added together equal user value
+
+        if (attemptEval || timeEval) {
+            if (hashEval) { 
+                if (emptyEval) {
+                    if (inputEval) {
+                        generateNumbers();
+                        attempts = 0;
+                        return true;
+                    } else {
+                        generateNumbers();
+                        attempts++;
+                        showMessage("Incorrect!");
+                        return false;
+                    }
+                } else {
+                    showMessage("User input cannot be blank.");
+                    return false;
+                }
+            } else {
+                showMessage("Generated hash mismatch. Please try again.");
+                generateNumbers();
+                return false;
+            }
+        } else {
+            showMessage("Please wait at least 5 seconds from the last attempt to try again.");
+            return false;
+        }
+    } else {
+        showMessage("Cannot validate, numbers not generated.");
+        return false;
+    }
+}
+```
 
 After all of this, we override the HTML form's default actions and make it so that the validation function must return true to submit the form, along with the typical input checks.
 
-![A screenshot of JavaScript code. A function that adds an event listener to the form's submit button (and, by extension, the form itself), overriding the usual submission event and allowing for us to run our validation function before submitting.](/assets/uploads/screenshot-from-2024-07-10-20-01-34.png)
+```javascript
+FORM_SUBMIT_BTN.addEventListener("click", (event)=>{
+    event.preventDefault();
+
+    if (FORM_ELEM.reportValidity() && validateInput()) {
+        FORM_ELEM.submit();
+    } else {
+        return false;
+    }
+
+}, false);
+```
 
 Now, I can already hear people telling me, "but Zach! People can just easily manipulate the client-side JavaScript code to bypass all of this!" While that is definitely true and is the reason why I am ONLY using this code for a simple bot-hampering tactic, it takes some skill for an individual to bypass this code when they could just as easily answer it themselves. As for the bots, it would also be easy to create web-scraping code that looks for the HTML IDs of the number values and input field and automatically solve it, but that would require handcrafted code that, to my belief, many scam/spam groups would find not worthwhile for my little ol' website. Plus, it makes for a fun, harmless side project that I had a good time working up and writing about. So, in the end, it doesn't even matter.
 
