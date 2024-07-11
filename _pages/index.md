@@ -3,8 +3,7 @@ title: Homepage
 header: true
 order: 1
 permalink: /
-stylesheets:
-  - /assets/style/page/index.css
+stylesheets: null
 scripts: []
 ---
 ![A moody picture of myself in a mirror holding my Nikon Z fc camera.](https://res.cloudinary.com/attkzach/image/private/s--cDzZnjRi--/v1720717581/uploads/nkjzo3qoxbgou2bwkqiy.webp){:class="portrait"}
