@@ -23,6 +23,28 @@
     --breakpoint: 700px;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c-foreground: rgb(20, 20, 20);
+        --c-background: rgb(10, 10, 10);
+        --c-text-normal: rgb(235, 245, 255);
+        --c-text-subtle: rgb(150, 160, 170);
+        --c-text-emphasis: rgb(80, 165, 245);
+        --c-border: rgb(60, 60, 60);
+    }
+
+    #creative-commons .cc-icon { filter: invert(1.0) }
+
+    p img {
+        outline: 1px solid rgba(255, 255, 255, .15);
+        background-image:
+            linear-gradient(45deg, #333 25%, transparent 25%),
+            linear-gradient(-45deg, #333 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #333 75%),
+            linear-gradient(-45deg, transparent 75%, #333 75%);
+    }
+}
+
 ::selection, ::-moz-selection {
     background: var(--c-text-emphasis);
     color: white;
@@ -501,26 +523,4 @@ input[type="submit"]:hover { background: var(--c-border) }
     #copyright,
     #creative-commons,
     #last-updated { text-align: center }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --c-foreground: rgb(20, 20, 20);
-        --c-background: rgb(0, 0, 0);
-        --c-text-normal: rgb(235, 245, 255);
-        --c-text-subtle: rgb(150, 160, 170);
-        --c-text-emphasis: rgb(80, 165, 245);
-        --c-border: rgb(50, 50, 50);
-    }
-
-    #creative-commons .cc-icon { filter: invert(1.0) }
-
-    p img {
-        outline: 1px solid rgba(255, 255, 255, .15);
-        background-image:
-            linear-gradient(45deg, #333 25%, transparent 25%),
-            linear-gradient(-45deg, #333 25%, transparent 25%),
-            linear-gradient(45deg, transparent 75%, #333 75%),
-            linear-gradient(-45deg, transparent 75%, #333 75%);
-    }
 }
