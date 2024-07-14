@@ -1,0 +1,6 @@
+- label: Mastodon.social
+  url: https://mastodon.social/@zachfetters
+  rel: "me"
+- label: Bluesky
+  url: https://bsky.app/profile/zach.fetters.me
+  rel: null

@@ -88,15 +88,21 @@ header .link:last-of-type { margin: 0 }
 footer {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    grid-template-rows: auto auto;
+    gap: 10px;
     clear: both;
     padding: 20px 40px;
     border-top: 1px solid var(--c-border);
     background: var(--c-foreground);
     z-index: 3;
+}
+
+footer .row {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
 footer span {
@@ -110,7 +116,7 @@ footer span {
 #last-updated { text-align: right }
 
 main {
-    padding: 20px 40px;
+    padding: 40px;
     z-index: 2;
 }
 
@@ -125,8 +131,23 @@ h1 {
 h2 {
     font-size: var(--s-large);
     line-height: var(--s-large);
-    margin: var(--s-normal) 0;
+    margin: var(--s-large) 0;
     text-align: center;
+}
+
+h3 {
+    font-size: var(--s-large);
+    line-height: var(--s-large);
+    margin: var(--s-normal) 0;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: var(--s-normal);
+    line-height: var(--s-normal);
+    margin: var(--s-normal) 0;
+    font-weight: normal;
+    color: var(--c-text-subtle);
 }
 
 p {
@@ -139,10 +160,10 @@ p:last-of-type { margin: var(--s-normal) 0 0 0 }
 
 hr {
     border: 0;
-    border-top: 1px solid var(--c-border);
+    border-top: 1px dashed var(--c-border);
     height: 0px;
     width: 100%;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 a {
@@ -183,10 +204,18 @@ p img {
     max-width: 100%;
     min-width: 200px;
     border-radius: 10px;
-    outline: 1px solid var(--c-border);
+    outline: 1px solid rgba(0, 0, 0, .15);
     outline-offset: -1px;
     user-select: none;
     pointer-events: none;
+    background-color: var(--c-foreground);
+    background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
 
 code { font-family: var(--f-mono) }
@@ -214,7 +243,7 @@ pre {
     width: calc(100% + 80px);
     max-height: 500px;
     border-bottom: 1px solid var(--c-border);
-    margin: -20px 0 20px -40px;
+    margin: -40px 0 40px -40px;
     user-select: none;
     pointer-events: none;
     overflow: hidden;
@@ -249,7 +278,7 @@ pre {
     font-weight: normal;
     font-style: italic;
     color: var(--c-text-subtle);
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
 }
 
 #post-info {
@@ -462,6 +491,13 @@ input[type="submit"]:hover { background: var(--c-border) }
         gap: 10px;
     }
 
+    footer .row {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        gap: 10px;
+    }
+
     #copyright,
     #creative-commons,
     #last-updated { text-align: center }
@@ -478,4 +514,13 @@ input[type="submit"]:hover { background: var(--c-border) }
     }
 
     #creative-commons .cc-icon { filter: invert(1.0) }
+
+    p img {
+        outline: 1px solid rgba(255, 255, 255, .15);
+        background-image:
+            linear-gradient(45deg, #333 25%, transparent 25%),
+            linear-gradient(-45deg, #333 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #333 75%),
+            linear-gradient(-45deg, transparent 75%, #333 75%);
+    }
 }
