@@ -18,7 +18,15 @@
         {% endif %}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{site.url}}{{page.url}}" />
+        {% if jekyll.environment == "production" %}
         <link rel="stylesheet" href="/assets/style/style.min.css" type="text/css">
+        {% else %}
+        <link rel="stylesheet" href="/static/style/fonts.css" type="text/css">
+        <link rel="stylesheet" href="/static/style/code.css" type="text/css">
+        <link rel="stylesheet" href="/static/style/creative-commons.css" type="text/css">
+        <link rel="stylesheet" href="/static/style/main.css" type="text/css">
+        <link rel="stylesheet" href="/static/style/page/index.css" type="text/css">
+        {% endif %}
         {% if page.stylesheets %}
         {% for stylesheet in page.stylesheets %}
         <link rel="stylesheet" href="{{stylesheet}}" type="text/css">

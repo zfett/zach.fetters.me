@@ -32,7 +32,7 @@ include             : [".htaccess", "_pages/"]
 exclude             : [
                         "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", 
                         "vendor/cache/", "vendor/gems/", "vendor/ruby/", "LICENSE",
-                        "README.md", "package.json", "package-lock.json", "static/"
+                        "README.md", "package.json", "package-lock.json"
                       ]
 
 markdown            : kramdown
