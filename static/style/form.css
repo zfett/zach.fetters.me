@@ -75,6 +75,7 @@ input[type="submit"]:hover { background: var(--c-border) }
 #text div {
     display: inline;
     color: var(--c-text-normal);
+    margin: 0 1ch;
 }
 
 #question-input { 
