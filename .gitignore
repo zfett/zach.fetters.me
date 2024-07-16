@@ -6,4 +6,4 @@ _site/
 vendor/
 node_modules/
 /assets/style/
-/assets/script/
+!/assets/style/style.min.css

@@ -26,7 +26,7 @@
     "concat": "concat-glob-cli -f assets/style/*.css -o assets/style/style.min.css",
     "minify": "css-minify -d ./static/style/ -o ./assets/style/ && css-minify -d ./static/style/page/ -o ./assets/style/ && npm run concat",
     "compile": "google-closure-compiler -O ADVANCED_OPTIMIZATIONS --emit_use_strict true --js ./static/script/form-input.js --js_output_file ./assets/script/form-input.min.js",
-    "build": "npm run minify && npm run compile && JEKYLL_ENV=production bundle exec jekyll build",
+    "build": "bundle exec jekyll build JEKYLL_ENV=production",
     "dev": "start npm-watch && start bundle exec jekyll serve --watch JEKYLL_ENV=development"
   }
 }
