@@ -1,0 +1,57 @@
+#paginator {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px auto 30px;
+    border: 1px solid var(--c-border);
+    margin: 40px auto 0 auto;
+    max-width: 150px;
+    font-size: var(--s-small);
+    line-height: 30px;
+    text-align: center;
+    color: var(--c-text-subtle);
+    user-select: none;
+}
+
+#paginator .button {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#paginator .button a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: inherit;
+}
+
+#paginator .button::before {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: var(--s-small);
+    text-align: center;
+    color: var(--c-text-normal);
+}
+
+#paginator .button.disabled { cursor: not-allowed }
+#paginator .button.disabled a { pointer-events: none }
+
+#paginator .button.disabled::before { color: var(--c-border) }
+
+#paginator .button:not(.disabled):hover::before { color: var(--c-text-emphasis) }
+
+#paginator .button.previous { border-right: 1px solid var(--c-border) }
+#paginator .button.next { border-left: 1px solid var(--c-border) }
+
+#paginator .button.previous::before { content: "🞀" }
+#paginator .button.next::before { content: "🞂" }
+
+#paginator .button:not(.disabled).previous:hover,
+#paginator .button:not(.disabled).next:hover { background: var(--c-border) }

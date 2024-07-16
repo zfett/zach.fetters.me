@@ -1,23 +1,31 @@
 {
   "dependencies": {
+    "concat": "^1.0.3",
+    "concat-glob-cli": "^0.1.0",
     "css-minify": "^2.0.0",
+    "del-cli": "^5.1.0",
     "google-closure-compiler": "^20240317.0.0",
     "npm-watch": "^0.13.0"
   },
   "watch": {
     "minify": {
-        "patterns": ["static/style/"],
-        "extensions": "css"
+      "patterns": [
+        "static/style/"
+      ],
+      "extensions": "css"
     },
     "compile": {
-        "patterns": ["static/script/"],
-        "extensions": "js"
+      "patterns": [
+        "static/script/"
+      ],
+      "extensions": "js"
     }
   },
   "scripts": {
-    "minify": "rm -rf ./assets/style/ && css-minify -d /static/style/ -o /assets/style/ && css-minify -d /static/style/page/ -o /assets/style/ && cat ./assets/style/* > ./assets/style/style.min.css && cd ./assets/style/ && find . ! -name 'style.min.css' -type f -exec rm -f {} +",
-    "compile": "rm -rf ./assets/script/ && google-closure-compiler -O 'ADVANCED' --emit_use_strict true --js './static/script/form-input.js' --js_output_file './assets/script/form-input.min.js'",
+    "concat": "concat-glob-cli -f ./assets/style/* -o ./assets/style/style.min.css",
+    "minify": "del-cli ./assets/style/* && css-minify -d ./static/style/ -o ./assets/style/ && css-minify -d ./static/style/page/ -o ./assets/style/ && npm run concat && del-cli ./assets/style/* !./assets/style/style.min.css",
+    "compile": "del-cli ./assets/script/* && google-closure-compiler -O ADVANCED_OPTIMIZATIONS --emit_use_strict true --js ./static/script/form-input.js --js_output_file ./assets/script/form-input.min.js",
     "build": "npm run minify && npm run compile && JEKYLL_ENV=production bundle exec jekyll build",
-    "dev": "npm-watch & JEKYLL_ENV=development bundle exec jekyll serve --watch"
+    "dev": "start npm-watch && start bundle exec jekyll serve --watch JEKYLL_ENV=development"
   }
 }

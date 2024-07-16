@@ -1,0 +1,5 @@
+<div id="paginator">
+    <div class="button previous {%if paginator.previous_page==null%}disabled{%endif%}" title="Previous page">{%if paginator.previous_page%}<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | replace: '.html', '' }}"></a>{%endif%}</div>
+    <div id="cur-page">{{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}</div>
+    <div class="button next {%if paginator.next_page==null%}disabled{%endif%}" title="Next page">{%if paginator.next_page%}<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | replace: '.html', '' }}"></a>{%endif%}</div>
+</div>

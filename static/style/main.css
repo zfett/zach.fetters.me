@@ -23,28 +23,6 @@
     --breakpoint: 700px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --c-foreground: rgb(20, 20, 20);
-        --c-background: rgb(10, 10, 10);
-        --c-text-normal: rgb(235, 245, 255);
-        --c-text-subtle: rgb(150, 160, 170);
-        --c-text-emphasis: rgb(80, 165, 245);
-        --c-border: rgb(60, 60, 60);
-    }
-
-    #creative-commons .cc-icon { filter: invert(1.0) }
-
-    p img {
-        outline: 1px solid rgba(255, 255, 255, .15);
-        background-image:
-            linear-gradient(45deg, #333 25%, transparent 25%),
-            linear-gradient(-45deg, #333 25%, transparent 25%),
-            linear-gradient(45deg, transparent 75%, #333 75%),
-            linear-gradient(-45deg, transparent 75%, #333 75%);
-    }
-}
-
 ::selection, ::-moz-selection {
     background: var(--c-text-emphasis);
     color: white;
@@ -145,7 +123,7 @@ main {
 h1 {
     font-size: var(--s-xlarge);
     line-height: var(--s-xlarge);
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     color: var(--c-text-emphasis);
     text-align: center;
 }
@@ -258,220 +236,24 @@ pre {
     visibility: hidden !important;
 }
 
-#cover {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    width: calc(100% + 80px);
-    max-height: 500px;
-    border-bottom: 1px solid var(--c-border);
-    margin: -40px 0 40px -40px;
-    user-select: none;
-    pointer-events: none;
-    overflow: hidden;
-    font-size: 0;
-}
-
-#cover img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    margin: 0;
-}
-
-#category {
-    position: relative;
-    display: block;
-    text-align: center;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--c-text-subtle);
-    font-size: var(--s-small);
-    line-height: var(--s-small);
-}
-
-#subtitle {
-    font-size: var(--s-normal);
-    line-height: var(--s-normal);
-    font-weight: normal;
-    font-style: italic;
-    color: var(--c-text-subtle);
-    margin: 0 0 40px 0;
-}
-
-#post-info {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    margin: 20px 0;
-    padding: 10px 20px;
-    font-size: var(--s-small);
-    line-height: 30px;
-    color: var(--c-text-subtle);
-    border-top: 1px solid var(--c-border);
-    border-bottom: 1px solid var(--c-border);
-}
-
-#tags { justify-self: center }
-
-#tags .tag {
-    padding: 5px 10px;
-    border-radius: 5px;
-    background: var(--c-border);
-    margin: 0 5px 0 0;
-    font-family: var(--f-mono);
-    text-transform: lowercase;
-    color: var(--c-text-normal);
-    line-height: 20px;
-}
-
-#tags .tag:last-of-type { margin: 0 }
-
-#pagination { 
-    text-align: center;
-    color: var(--c-text-subtle);
-    font-family: var(--f-mono);
-    font-size: var(--s-small);
-    line-height: var(--s-small);
-    margin: 20px 0 0 0;
-}
-
-#pagination a {
-    font-size: var(--s-normal);
-}
-
-#contact-form {
-    position: relative;
-    display: block;
-    padding: 20px;
-    width: calc(100% - 42px);
-    max-width: calc(var(--breakpoint) - 122px);
-    min-width: 250px;
-    margin: 20px auto 0 auto;
-    background:var(--c-foreground);
-    border: 1px solid var(--c-border);
-    overflow: hidden;
-}
-
-label {
-    position: relative;
-    display: grid;
-    grid-template-columns: 95px 1fr;
-    gap: 20px;
-    margin: 0 0 15px 0;
-    font-size: var(--s-small);
-    line-height: 26px;
-    vertical-align: middle;
-    color: var(--c-text-subtle);
-}
-
-label:last-of-type { margin: 0 }
-
-input, textarea {
-    position: relative;
-    display: block;
-    padding: 5px 10px;
-    border: 1px solid var(--c-border);
-    background: var(--c-foreground);
-    color: var(--c-text-normal);
-    margin: 0;
-    width: 100%;
-    max-width: calc(100% - 22px);
-    max-height: 300px;
-    min-height: 16px;
-    font-family: var(--f-sans);
-    font-size: var(--s-small);
-    overflow: hidden;
-    resize: vertical;
-}
-
-input[type="submit"] {
-    position: relative;
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    min-width: 120px;
-}
-
-input[type="submit"]:hover { background: var(--c-border) }
-
-#submission-field {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--c-border);
-    padding: 20px 0 0 0;
-    margin: 20px 0 0 0;
-}
-
-#text {
-    display: block;
-    color: var(--c-text-subtle);
-    font-size: var(--s-small);
-    line-height: var(--s-small);
-    font-family: var(--f-mono);
-}
-
-#text div {
-    display: inline;
-    color: var(--c-text-normal);
-}
-
-#question-input { 
-    display: inline;
-    max-width: 50px;
-    margin: 0 0 0 15px;
-    padding: 5px;
-}
-
-#human-question {
-    position: relative;
-    display: block;
-    width: 100%;
-}
-
-#message {
-    position: relative;
-    display: block;
-    margin: 20px 0 0 0;
-    font-size: var(--s-small);
-    line-height: var(--s-small);
-    color: rgb(255, 75, 75);
-    font-weight: bold;
-}
-
-@media screen and (max-width: 700px) {
-    label {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        gap: 10px;
-        margin: 0 0 20px 0;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c-foreground: rgb(20, 20, 20);
+        --c-background: rgb(10, 10, 10);
+        --c-text-normal: rgb(235, 245, 255);
+        --c-text-subtle: rgb(150, 160, 170);
+        --c-text-emphasis: rgb(80, 165, 245);
+        --c-border: rgb(60, 60, 60);
     }
 
-    #submission-field {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        gap: 10;
-        align-items: center;
-        justify-content: space-around;
+    p img {
+        outline: 1px solid rgba(255, 255, 255, .15);
+        background-image:
+            linear-gradient(45deg, #333 25%, transparent 25%),
+            linear-gradient(-45deg, #333 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #333 75%),
+            linear-gradient(-45deg, transparent 75%, #333 75%);
     }
-
-    #captcha { margin: 0 auto }
-
-    input[type="submit"] {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    #text { text-align: center }
 }
 
 @media screen and (max-width: 1000px) {
@@ -490,23 +272,6 @@ input[type="submit"]:hover { background: var(--c-border) }
 
     #site-navigation .link { line-height: 20px }
 
-    #post-info {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        gap: 10px;
-    }
-
-    #author, #tags, #tags .tag {
-        text-align: center;
-        word-break: break-word;
-        line-height: var(--s-normal);
-    }
-
-    #tags .tag {
-        display: block;
-        margin: 0 0 5px 0;
-    }
-
     footer {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
@@ -521,6 +286,5 @@ input[type="submit"]:hover { background: var(--c-border) }
     }
 
     #copyright,
-    #creative-commons,
     #last-updated { text-align: center }
 }

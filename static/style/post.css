@@ -1,0 +1,96 @@
+#cover {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: calc(100% + 80px);
+    max-height: 500px;
+    border-bottom: 1px solid var(--c-border);
+    margin: -40px 0 40px -40px;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    font-size: 0;
+}
+
+#cover img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+}
+
+#category {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--c-text-subtle);
+    font-size: var(--s-small);
+    line-height: var(--s-small);
+}
+
+#title { margin: 0 0 20px 0 }
+
+#subtitle {
+    font-size: var(--s-normal);
+    line-height: var(--s-normal);
+    font-weight: normal;
+    font-style: italic;
+    color: var(--c-text-subtle);
+    margin: 0 0 40px 0;
+}
+
+#post-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: var(--s-small);
+    line-height: 30px;
+    color: var(--c-text-subtle);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+}
+
+#tags { justify-self: center }
+
+#tags .tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: var(--c-border);
+    margin: 0 5px 0 0;
+    font-family: var(--f-mono);
+    text-transform: lowercase;
+    color: var(--c-text-normal);
+    line-height: 20px;
+}
+
+#tags .tag:last-of-type { margin: 0 }
+
+@media screen and (max-width: 1000px) {
+    #post-info {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+    }
+
+    #author, #tags, #tags .tag {
+        text-align: center;
+        word-break: break-word;
+        line-height: var(--s-normal);
+    }
+
+    #tags .tag {
+        display: block;
+        margin: 0 0 5px 0;
+    }
+
+    #copyright { text-align: center }
+}
