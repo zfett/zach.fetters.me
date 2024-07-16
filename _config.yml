@@ -20,6 +20,13 @@ pagination:
     before: 1
     after: 1
 
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: all
+  blanklines: false
+
 collections:
   posts:
     output             : true
@@ -42,7 +49,7 @@ kramdown:
   gfm_emojis: true
   syntax_highlighter_opts:
     block:
-      line_numbers: true
+      line_numbers: false
 
 defaults:
   - scope:

@@ -223,7 +223,7 @@ code { font-family: var(--f-mono) }
 pre {
     position: relative;
     display: block;
-    padding: 5px 10px;
+    padding: 20px;
     margin: var(--s-normal) 0;
     border-radius: 10px;
     background: var(--c-code-background);
