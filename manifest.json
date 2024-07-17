@@ -1,0 +1,91 @@
+---
+---
+{
+    "name": "Zachary Fetters' Website",
+    "short_name": "Zachary Fetters",
+    "dir": "ltr",
+    "lang": "en-US",
+    "start_url": "/",
+    "shortcuts": [
+        {
+            "name": "Homepage",
+            "url": "/",
+            "description": "Site homepage"
+        },
+        {
+            "name": "Blog",
+            "url": "/blog/",
+            "description": "Blog posts"
+        },
+        {
+            "name": "Contact",
+            "url": "/contact/",
+            "description": "Contact information"
+        },
+        {
+            "name": "RSS Feed",
+            "url": "/feed.xml",
+            "description": "RSS feed for posts"
+        }
+    ],
+    "theme_color": "#1469b9",
+    "background_color": "#ebebeb",
+    "description": "{{site.description}}",
+    "display": "browser",
+    "launch_handler": { "client_mode": ["focus-existing", "auto"] },
+    "orientation": "landscape",
+    "scope": "{{site.url}}",
+    "screenshots": [
+        {
+            "src": "manifest/screenshot.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Screenshot of the homepage"
+        }
+    ],
+    "icons": [
+        {
+            "src": "manifest/icon/icon@48px.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon@72px.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon@96px.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon@128px.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon@256px.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon.png",
+            "sizes": "any",
+            "type": "image/png"
+        },
+        {
+            "src": "manifest/icon/icon-maskable.png",
+            "sizes": "any",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "manifest/icon/icon-monochrome.png",
+            "sizes": "any",
+            "type": "image/png",
+            "purpose": "monochrome"
+        }
+    ]
+}
