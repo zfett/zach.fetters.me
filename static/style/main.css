@@ -68,10 +68,14 @@ header {
     z-index: 4;
 }
 
-#site-title {
-    font-size: var(--s-large);
-    line-height: 30px;
-    margin: 0;
+#site-logo {
+    position: relative;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    width: 50px;
+    height: 30px;
+    background: transparent url('/assets/image/logo-dark.svg') no-repeat left center/contain;
 }
 
 #site-navigation { text-align: right }
@@ -246,6 +250,8 @@ pre {
         --c-border: rgb(60, 60, 60);
     }
 
+    #site-logo { background: transparent url('/assets/image/logo-light.svg') no-repeat left center/contain }
+
     p img {
         outline: 1px solid rgba(255, 255, 255, .15);
         background-image:
@@ -266,7 +272,7 @@ pre {
 
     header { grid-template-columns: 1fr }
 
-    #site-title { display: none }
+    #site-logo { display: none }
 
     #site-navigation { text-align: center }
 

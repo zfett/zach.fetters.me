@@ -1,5 +1,5 @@
 <header>
     {% assign pages = site.pages | where: "header", true | sort: "order" %}
-    <h2 id="site-title">{{site.title}}</h2>
+    <div id="site-logo" title="{{site.title}}"></div>
     <nav id="site-navigation">{% for page in pages %}{% if page.order and page.autogen == nil %}<a href="{{page.url | replace: 'index.html', ''}}" class="link">{{page.title}}</a>{% endif %}{% endfor %}</nav>
 </header>
