@@ -12,6 +12,7 @@ backend:
     openAuthoring: "{{message}} - {{author-name}}"
 
 site_url: "https://zach.fetters.me"
+logo_url: "https://zach.fetters.me/assets/image/logo-dark.svg"
 locale: "en"
 show_preview_links: false
 
@@ -21,6 +22,7 @@ media_library:
     cloud_name: attkzach
     api_key: 884321435133287
     use_transformations: true
+    use_secure_url: true
 
 slug:
   encoding: "ascii"
@@ -32,6 +34,14 @@ collections:
     label: "Blog"
     label_singular: "Post"
     sortable_fields: ["title", "commit_date", "subtitle", "tags", "commit_author"]
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+      - label: Drafts
+        field: published
+      - label: Category
+        field: categories
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"

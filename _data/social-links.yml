@@ -1,6 +1,11 @@
-- label: Mastodon.social
+- label: Mastodon
   url: https://mastodon.social/@zachfetters
   rel: "me"
 - label: Bluesky
   url: https://bsky.app/profile/zach.fetters.me
   rel: null
+- label: Instagram
+  url: https://www.instagram.com/attkzach
+  rel: null
+- label: Flickr
+  url: https://flickr.com/photos/zachfetters/
