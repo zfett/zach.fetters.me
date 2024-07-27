@@ -36,7 +36,7 @@ collections:
 
 future              : true
 safe                : false
-include             : [".htaccess", "_pages/"]
+include             : [".htaccess", "_pages/", ".well-known/"]
 exclude             : [
                         "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", 
                         "vendor/cache/", "vendor/gems/", "vendor/ruby/", "LICENSE",
