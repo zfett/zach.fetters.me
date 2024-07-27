@@ -5,7 +5,8 @@ order: 4
 permalink: /projects/
 ---
 ## Personal
-- **UWDB**: Ultrawide Database - An online, crowdsourced database rating games and software support for ultrawide resolutions. _(WIP)_
+- **ownNote**: An online, local-only, encrypted note-taking web-app using the [Web Crypto API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API). _(WIP)_
+- **UWDB**: Ultrawide Database - An online, crowdsourced database rating games and software support for ultrawide resolutions. _(WIP, not being actively worked on)_
 
 ## Client Work
 - **[Sydney Hughes](https://sydneyhughesart.com/)**: Converted her online portfolio prototype into a published website using Jekyll + Decap CMS + Netlify. Also provided online one-on-one calls to help teach her how to develop & manage her site.
