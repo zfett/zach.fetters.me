@@ -11,7 +11,11 @@ layout: compress
         <main>
             {% if page.cover %}
             <div id="cover">
-                <img src="{{page.cover}}"/>
+                <picture>
+                    <source media="(min-width:1000px)" srcset="https://res.cloudinary.com/attkzach/image/upload/t_uploads/uploads/{{page.cover | slice: 69, 9999}}">
+                    <source media="(min-width:700px)" srcset="https://res.cloudinary.com/attkzach/image/upload/t_uploads_small/uploads/{{page.cover  | slice: 69, 9999}}">
+                    <img src="https://res.cloudinary.com/attkzach/image/upload/t_uploads_small/uploads/{{page.cover | slice: 69, 9999 | replace: '.webp', '.jpg'}}">
+                </picture>
             </div>
             {% endif %}
             <span id="category">{{page.categories}}</span>

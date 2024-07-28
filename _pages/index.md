@@ -6,7 +6,7 @@ permalink: /
 stylesheets: null
 scripts: []
 ---
-![A moody picture of myself in a mirror holding my Nikon Z fc camera.](https://res.cloudinary.com/attkzach/image/private/s--cDzZnjRi--/v1720717581/uploads/nkjzo3qoxbgou2bwkqiy.webp){:class="portrait"}
+![A moody picture of myself in a mirror holding my Nikon Z fc camera.](https://res.cloudinary.com/attkzach/image/upload/uploads/gwzef47tirgj8bi3jtpi.webp){:class="portrait"}
 
 Hello! My name is Zachary Fetters and I am an amateur photographer, web designer, developer, game enjoyer, bad D&D player, and whatever else interests me from time to time. (That's me to the left!)
 

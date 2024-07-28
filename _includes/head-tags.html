@@ -13,7 +13,7 @@
 <meta property="og:description" content="{{page.content | markdownify | strip_html | strip_newlines | truncatewords: 40}}" />
 {% endif %}
 {% if page.cover %}
-<meta property="og:image" content="{{page.cover}}" />
+<meta property="og:image" content="https://res.cloudinary.com/attkzach/image/upload/t_uploads/uploads/{{page.cover | slice: 69, 9999 | replace: '.webp', '.jpg'}}" />
 {% else %}
 <meta property="og:image" content="{{site.url}}/assets/image/seo-cover-default.jpg" />
 {% endif %}

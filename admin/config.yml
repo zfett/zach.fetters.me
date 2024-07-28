@@ -1,4 +1,4 @@
-local_backend: false
+local_backend: true
 
 backend:
   name: git-gateway
@@ -46,14 +46,41 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Category", name: "categories", widget: "select", options: ["technology","programming","photography","art","gaming","design","miscellaneous","meta"] }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", picker_utc: true }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Subtitle", name: "subtitle", widget: "string", default: "" }
-      - { label: "Cover Image", name: "cover", widget: "image", allow_multiple: false }
-      - { label: "Tags", name: "tags", widget: "list", max: 5, min: 0, default: null }
-      - { label: "Published?", name: "published", widget: boolean, default: true }
-      - { label: "Body Text", name: "body", widget: "markdown" }
+      - label: "Category"
+        name: "categories"
+        widget: "select"
+        options: ["technology","programming","photography","art","gaming","design","miscellaneous","meta"]
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        picker_utc: true
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Subtitle"
+        name: "subtitle"
+        widget: "string"
+        default: ""
+      - label: "Cover Image"
+        name: "cover"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          output_filename_only: true
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        max: 5
+        min: 0
+        default: null
+      - label: "Published?"
+        name: "published"
+        widget: boolean
+        default: true
+      - label: "Body Text"
+        name: "body"
+        widget: "markdown"
   - name: "page"
     label: "Pages"
     label_singular: "Page"
