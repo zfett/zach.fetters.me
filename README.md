@@ -6,14 +6,15 @@ Personal website - Made using Jekyll + Decap CMS
 
 ## Requirements
 
-- Ruby v2.7.2 or greater
-- Ruby bundler v2.3.27 or greater
+- Ruby v3.3.4 or greater
+- Ruby bundler v2.5.16 or greater
+- Node.js v22.6.0 or greater
 
 ## Local Setup
 
 1. Clone repo locally
-2. Navigate to the repo in your terminal and run `bundle install`
-3. To view local changes live, run `bundle exec jekyll serve --watch` and go to the provided URL in your browser (typically http://127.0.0.1:4000) 
+2. Navigate to the repo in your terminal and run `bundle install` and `npm i`
+3. To view local changes live, run `npm run dev` and go to the provided URL in your browser (typically http://127.0.0.1:4000) 
 
 As you make changes to the site, refresh the page in your browser and your changes will appear live. If you're finding that changes aren't appearing initially, find the `_site` folder at the root of the project and delete it. This will force Jekyll to rebuild the site.
 
