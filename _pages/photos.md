@@ -1,6 +1,6 @@
 ---
-title: "Contact"
+title: "Photos"
 header:
   show: true
-  order: 5
+  order: 4
 ---
