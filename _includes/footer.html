@@ -1,7 +1,0 @@
-<footer>
-    <div class="row">
-        <span id="copyright">&copy; {{site.time | date: '%Y'}} {{site.title}} &mdash; Site last updated on {{site.time | date: '%B %e, %Y'}}</span>
-        {% include creative-commons.html terms="by nc sa" url="/content-license/" %}
-    </div>
-    <div class="row"><span>{% for link in site.data.social-links %}{% if forloop.last != true %}<a {%if link.rel != null%}rel="{{link.rel}}"{%endif%} target="_blank" href="{{link.url}}">{{link.label}}</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;{% else %}<a {%if link.rel != null%}rel="{{link.rel}}"{%endif%} target="_blank" href="{{link.url}}">{{link.label}}</a>{%endif%}{%endfor%}</span><span>{% for link in site.data.footer-links %}{% if forloop.last != true %}<a {%if link.rel != null%}rel="{{link.rel}}"{%endif%} target="_blank" href="{{link.url}}">{{link.label}}</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;{% else %}<a {%if link.rel != null%}rel="{{link.rel}}"{%endif%} target="_blank" href="{{link.url}}">{{link.label}}</a>{%endif%}{%endfor%}</span></div>
-</footer>

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi SemiBold'), local('Pridi-SemiBold'),
+        url('subset-Pridi-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi Regular'), local('Pridi-Regular'),
+        url('subset-Pridi-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi Medium'), local('Pridi-Medium'),
+        url('subset-Pridi-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi Bold'), local('Pridi-Bold'),
+        url('subset-Pridi-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi ExtraLight'), local('Pridi-ExtraLight'),
+        url('subset-Pridi-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    src: local('Pridi Light'), local('Pridi-Light'),
+        url('subset-Pridi-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

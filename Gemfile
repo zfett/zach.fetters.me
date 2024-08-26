@@ -6,4 +6,3 @@ gem "jekyll-paginate-v2"
 gem "jekyll-feed"
 gem "tzinfo"
 gem "tzinfo-data"
-gem 'wdm' if Gem.win_platform?

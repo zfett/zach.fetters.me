@@ -1,0 +1,18 @@
+<aside id="site-sidebar">
+    <h1><a href="/">{{site.title}}</a></h1>
+    <nav id="site-navigation">
+        {% assign pages = site.pages | where: "header.show", "true" | sort: "header.order" %}
+        {% for header-page in pages %}
+        {% if header-page.url == page.url %}
+        <a href="{{header-page.url}}" class="link active">{{header-page.title}}</a>
+        {% else %}
+        <a href="{{header-page.url}}" class="link">{{header-page.title}}</a>
+        {% endif %}
+        {% endfor %}
+    </nav>
+    <nav id="external-links">
+        {% for link in site.data.external-links.link %}
+        <a href="{{link.url}}" class="link" target="_blank" rel="nofollow noreferrer">{{link.title}}</a>
+        {% endfor %}
+    </nav>
+</aside>
