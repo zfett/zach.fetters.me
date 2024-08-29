@@ -53,8 +53,8 @@ defaults:
       layout: "default"
       permalink: "/:basename/"
   - scope:
-      path: "_posts/"
+      path: "_posts/blog/"
       type: "posts"
     values:
-      layout: "post"
-      permalink: "/blog/:categories/:year/:title/"
+      layout: "default"
+      permalink: "/blog/:year/:month/:day/:title/"
