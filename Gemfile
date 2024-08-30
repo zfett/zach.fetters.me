@@ -2,8 +2,5 @@
 source "https://rubygems.org"
 gem "jekyll", "~> 4.3"
 gem "gemoji", "~> 3.0"
-gem "jekyll-paginate-v2"
-gem "jekyll-feed"
 gem "tzinfo"
 gem "tzinfo-data"
-gem 'wdm' if Gem.win_platform?
