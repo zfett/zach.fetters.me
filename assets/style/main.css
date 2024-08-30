@@ -73,6 +73,7 @@ a:hover {
     background: rgba(255, 255, 255, .15) url("/assets/image/noise.webp") repeat center/600px;
     filter: drop-shadow(-3px 6px 12px rgba(0, 0, 0, .1));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     outline: 1px solid rgba(255, 255, 255, .25);
     outline-offset: -1px;
 }
@@ -106,6 +107,7 @@ a:hover {
     background: rgba(255, 255, 255, .15) url("/assets/image/noise.webp") repeat center/600px;
     filter: drop-shadow(-3px 6px 12px rgba(0, 0, 0, .1));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     outline: 1px solid rgba(255, 255, 255, .25);
     outline-offset: -1px;
     overflow: hidden;
