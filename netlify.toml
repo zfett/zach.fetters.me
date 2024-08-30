@@ -1,3 +1,6 @@
+[build]
+    command = "bundle exec jekyll build"
+
 [[redirects]]
     from = "/.well-known/host-meta*"
     to = "https://fed.brid.gy/.well-known/host-meta:splat"
