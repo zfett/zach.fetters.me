@@ -1,6 +1,0 @@
----
-title: "Contact"
-header:
-  show: true
-  order: 5
----
