@@ -2,52 +2,26 @@
 <clientConfig version="1.1">
   <emailProvider id="fetters.me">
     <domain>fetters.me</domain>
-    <displayName>fetters.me</displayName>
+    <displayName>fetters.me - iCloud Custom Mail Domain</displayName>
     <displayShortName>fetters.me</displayShortName>
     <incomingServer type="imap">
-      <hostname>imap.dreamhost.com</hostname>
+      <hostname>imap.mail.me.com</hostname>
       <port>993</port>
       <socketType>SSL</socketType>
       <authentication>password-encrypted</authentication>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="imap">
-      <hostname>imap.dreamhost.com</hostname>
-      <port>143</port>
-      <socketType>STARTTLS</socketType>
-      <authentication>password-encrypted</authentication>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.dreamhost.com</hostname>
-      <port>995</port>
-      <socketType>SSL</socketType>
-      <authentication>password-cleartext</authentication>
-      <username>%EMAILADDRESS%</username>
-    </incomingServer>
-    <incomingServer type="pop3">
-      <hostname>pop.dreamhost.com</hostname>
-      <port>110</port>
-      <socketType>STARTTLS</socketType>
-      <authentication>password-cleartext</authentication>
-      <username>%EMAILADDRESS%</username>
+      <username>%EMAILLOCALPART%</username>
+      <password>Apple app-specific password from your iCloud account settings</password>
     </incomingServer>
     <outgoingServer type="smtp">
-      <hostname>smtp.dreamhost.com</hostname>
-      <port>465</port>
-      <socketType>SSL</socketType>
-      <authentication>password-encrypted</authentication>
-      <username>%EMAILADDRESS%</username>
-    </outgoingServer>
-    <outgoingServer type="smtp">
-      <hostname>smtp.dreamhost.com</hostname>
+      <hostname>smtp.mail.me.com</hostname>
       <port>587</port>
-      <socketType>STARTTLS</socketType>
+      <socketType>SSL</socketType>
       <authentication>password-encrypted</authentication>
-      <username>%EMAILADDRESS%</username>
+      <username>%EMAILLOCALPART%@icloud.com</username>
+      <password>Same as incoming mail settings<password>
     </outgoingServer>
-    <documentation url="https://help.dreamhost.com/hc/en-us/articles/214918038-Email-client-configuration-overview">
-      <descr lang="en">Dreamhost mail client configuration documentation</descr>
+    <documentation url="https://support.apple.com/en-us/102525">
+      <descr lang="en">iCloud Mail server settings for email client apps</descr>
     </documentation>
   </emailProvider>
 </clientConfig>
